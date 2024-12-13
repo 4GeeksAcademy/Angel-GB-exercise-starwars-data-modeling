@@ -19,6 +19,9 @@ class User(Base):
 
     favorites = relationship('Favorite', back_populates='user')
 
+    def to_dict(self):
+        return {}
+
 class Character(Base):
     __tablename__ = 'character'
 
@@ -41,6 +44,9 @@ class Character(Base):
 
     favorites = relationship('Favorite', back_populates='character')
 
+    def to_dict(self):
+        return {}
+
 class Planet(Base):
     __tablename__ = 'planet'
 
@@ -58,6 +64,9 @@ class Planet(Base):
     residents = relationship('Character', back_populates='homeworld')
 
     favorites = relationship('Favorite', back_populates='planet')
+
+    def to_dict(self):
+        return {}
 
 class Specie(Base):
     __tablename__ = 'specie'
@@ -77,6 +86,9 @@ class Specie(Base):
     characters = relationship('Character', back_populates='specie')
 
     favorites = relationship('Favorite', back_populates='specie')
+
+    def to_dict(self):
+        return {}
 
 class Starship(Base):
     __tablename__ = 'starship'
@@ -98,6 +110,9 @@ class Starship(Base):
 
     favorites = relationship('Favorite', back_populates='starship')
 
+    def to_dict(self):
+        return {}
+
 class Vehicle(Base):
     __tablename__ = 'vehicle'
 
@@ -116,6 +131,9 @@ class Vehicle(Base):
     description = Column(String(250), nullable=False)
 
     favorites = relationship('Favorite', back_populates='vehicle')
+
+    def to_dict(self):
+        return {}
 
 class Favorite(Base):
     __tablename__ = 'favorite'
