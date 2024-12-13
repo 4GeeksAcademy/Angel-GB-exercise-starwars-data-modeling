@@ -41,7 +41,6 @@ class Character(Base):
 
     favorites = relationship('Favorite', back_populates='character')
 
-# Tabla 'Planet'
 class Planet(Base):
     __tablename__ = 'planet'
 
@@ -60,7 +59,6 @@ class Planet(Base):
 
     favorites = relationship('Favorite', back_populates='planet')
 
-# Tabla 'Specie'
 class Specie(Base):
     __tablename__ = 'specie'
 
